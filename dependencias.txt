@@ -1,0 +1,4 @@
+python -m pip install opencv-python
+conda install torchvision 
+pip install numpy
+pip install -U albumentations
