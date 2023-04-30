@@ -46,6 +46,8 @@ def load_image(image_path: str = ''):
 
 def pre_processing_image(transform, image):
     return torch.div(transform(image=image)['image'][None, ...], 255)
+    #rounding_mode='trunc'
+    #rounding_mode='floor'
 
 class pred:
     def main(img):

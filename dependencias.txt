@@ -1,4 +1,6 @@
-python -m pip install opencv-python
-conda install torchvision 
+pip install flask
+pip install opencv-python
+pip install effect
 pip install numpy
-pip install -U albumentations
+pip install albumentations
+pip install torchvision
