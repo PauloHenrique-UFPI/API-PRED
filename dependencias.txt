@@ -1,7 +1,0 @@
-pip install flask
-pip install opencv-python
-pip install effect
-pip install numpy
-pip install albumentations
-pip install torchvision
-pip install gevent
