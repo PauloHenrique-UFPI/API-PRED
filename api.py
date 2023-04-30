@@ -2,7 +2,7 @@ from flask import Flask, request
 from flask import send_file
 import os
 from run import pred
-from gevent.pywsgi import WSGIServer
+
 
 app = Flask(__name__)
 
@@ -33,8 +33,4 @@ def upload_file():
     return send_file(nimg, mimetype='image/jpg')
 
 if __name__ == '__main__':
-    # Debug/Development
-    # app.run(debug=True, host="0.0.0.0", port="5000")
-    # Production
-    http_server = WSGIServer(('', 5000), app)
-    http_server.serve_forever()
+    app.run()
