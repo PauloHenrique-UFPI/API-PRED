@@ -4,13 +4,13 @@ import os
 from run import pred
 
 
-aplication = Flask(__name__)
+app = Flask(__name__)
 
 # diretório onde as imagens serão salvas
 UPLOAD_FOLDER = 'img'
-aplication.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-@aplication.route('/upload', methods=['POST'])
+@app.route('/upload', methods=['POST'])
 def upload_file():
     # verifique se o arquivo está presente na solicitação
     if 'file' not in request.files:
@@ -26,11 +26,11 @@ def upload_file():
     file.filename = 'imagem.jpg'
     
     # salve o arquivo em disco
-    file.save(os.path.join(aplication.config['UPLOAD_FOLDER'], file.filename))
+    file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
     img = file.filename
     
     nimg = pred.main(img)
     return send_file(nimg, mimetype='image/jpg')
 
 if __name__ == '__main__':
-    aplication.run()
+    app.run()
