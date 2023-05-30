@@ -32,5 +32,9 @@ def upload_file():
     nimg = pred.main(img)
     return send_file(nimg, mimetype='image/jpg')
 
+@app.route('/teste', methods=['GET'])
+def teste():
+    return "msg: funcionou"
+
 if __name__ == '__main__':
     app.run()
